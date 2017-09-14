@@ -38,7 +38,7 @@ const InvoiceType = new GraphQLObjectType({
     last_payment_date: { type: GraphQLDateTime },
     items: {
       type: new GraphQLList(ItemType),
-      resolve: items => items.map(itemId => _.find(Items, i => i.item_id === itemId)),
+      resolve: root => root.item_ids.map(itemId => _.find(Items, i => i.item_id === itemId)),
     },
   },
 });

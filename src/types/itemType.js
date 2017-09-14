@@ -2,10 +2,6 @@ const {
   GraphQLString, GraphQLInt, GraphQLID, GraphQLFloat, GraphQLBoolean, GraphQLObjectType,
 } = require('graphql');
 
-const {
-  GraphQLDateTime,
-} = require('graphql-iso-date');
-
 
 const ItemType = new GraphQLObjectType({
   name: 'Items',
