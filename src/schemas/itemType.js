@@ -1,4 +1,11 @@
-const { GraphQLString, GraphQLInt, GraphQLID, GraphQLFloat, GraphQLBoolean, GraphQLObjectType } = require('graphql');
+const {
+  GraphQLString, GraphQLInt, GraphQLID, GraphQLFloat, GraphQLBoolean, GraphQLObjectType,
+} = require('graphql');
+
+const {
+  GraphQLDateTime,
+} = require('graphql-iso-date');
+
 
 const ItemType = new GraphQLObjectType({
   name: 'Items',
@@ -21,18 +28,18 @@ const ItemType = new GraphQLObjectType({
     rate: { type: GraphQLFloat },
     pricebook_rate: { type: GraphQLFloat },
     purchase_rate: { type: GraphQLFloat },
-    reorder_level: { type: GraphQLInt},
-    initial_stock: { type: GraphQLInt},
-    initial_stock_rate: { type: GraphQLFloat},
+    reorder_level: { type: GraphQLInt },
+    initial_stock: { type: GraphQLInt },
+    initial_stock_rate: { type: GraphQLFloat },
     vendor_id: { type: GraphQLID },
     vendor_name: { type: GraphQLString },
-    stock_on_hand: { type: GraphQLInt},
+    stock_on_hand: { type: GraphQLInt },
     sku: { type: GraphQLString },
     image_id: { type: GraphQLID },
     image_name: { type: GraphQLString },
     purchase_description: { type: GraphQLString },
-    image_type: { type: GraphQLString }
-  }
+    image_type: { type: GraphQLString },
+  },
 });
 
 module.exports = ItemType;
